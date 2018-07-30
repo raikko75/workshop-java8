@@ -2,6 +2,8 @@ package java8.ex03;
 
 import java8.data.Data;
 import java8.data.Person;
+import java8.ex02.Method_02_Test.DaoA;
+
 import org.junit.Test;
 
 import java.util.List;
@@ -17,7 +19,13 @@ public class Method_03_Test {
     // tag::IDao[]
     interface IDao {
         List<Person> findAll();
-
+        public static IDao getDefaultInstance()
+        {
+        	Method_03_Test da = new Method_03_Test();
+        	
+			return da.new DaoA();
+        	
+        }
         // TODO créer une méthode statique IDao getDefaultInstance()
         // TODO cette méthode retourne une instance de la classe DaoA
     }
@@ -37,7 +45,8 @@ public class Method_03_Test {
     @Test
     public void test_getDefaultInstance() throws Exception {
         // TODO invoquer la méthode getDefaultInstance() pour que le test soit passant
-        IDao result = null;
+    	
+        IDao result = IDao.getDefaultInstance();
 
         assertThat(result.findAll(), hasSize(20));
     }
