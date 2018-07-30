@@ -60,7 +60,10 @@ public class Lambda_04_Test {
 
 		private <E> FuncCollection<E> map(GenericMapper<T, E> mapper) {
 			FuncCollection<E> result = new FuncCollection<>();
-			// TODO
+			for (T str : list )
+			{
+				
+			}
 			return result;
 		}
 

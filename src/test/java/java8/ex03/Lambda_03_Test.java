@@ -19,7 +19,7 @@ public class Lambda_03_Test {
 		void process(Person p);
 	}
 	// end::PersonProcessor[]
-
+			
 	// tag::forEach[]
 	private void forEach(List<Person> source, PersonProcessor processor) {    	
 		for(Person p : source)
